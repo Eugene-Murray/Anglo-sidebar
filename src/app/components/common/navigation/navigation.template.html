@@ -1,0 +1,70 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav metismenu" id="side-menu">
+      <li class="nav-header">
+        <div class="profile-element" dropdown>
+          <a dropdownToggle>
+            <span class="block m-t-xs"> 
+              <!-- <strong class="font-bold" >Master Data</strong>  -->
+              <a (click)="onClick_ShowTopMenu()">
+                <h2 style="color: #fff;"><i class="fa {{ TitleIcon }}" aria-hidden="true" [ngStyle]="{'color': IconColor}"></i> {{ Title }}</h2>
+              </a>
+            </span>
+          </a>
+        </div>
+        <div class="logo-element" (click)="onClick_ShowTopMenu()">
+          <i class="fa {{ TitleIcon }}" aria-hidden="true" [ngStyle]="{'color': IconColor}"></i>
+        </div>
+        <div *ngIf="showTopMenu" class="container top-menu">
+              
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default top-menu-item" style="margin-top: 10px">
+                        <div class="panel-body">
+                            <a (click)="onClick_ChangeTitle('Compliance', 'fa-check', '#1AB394')" style="color:darkgrey"><h2><i class="fa fa-check" aria-hidden="true" style="color: #1AB394"></i> Compliance</h2></a>
+                            Compliance and training applications
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default top-menu-item" style="margin-top: 10px">
+                        <div class="panel-body">
+                            <a (click)="onClick_ChangeTitle('Master Data', 'fa-asterisk', '#e76e09')" style="color:darkgrey"><h2><i class="fa fa-asterisk" aria-hidden="true" style="color: #e76e09"></i> Master Data</h2></a>
+                            All your master data request and management needs
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+           
+                    <div class="panel panel-default top-menu-item" style="margin-top: 10px">
+                        <div class="panel-body">
+                            <a (click)="onClick_ChangeTitle('Organisation', 'fa-user-circle-o', '#3074d2')" style="color:darkgrey"><h2><i class="fa fa-user-circle-o" aria-hidden="true" style="color: #3074d2"></i> Organisation</h2></a>
+                            Organisation and related tools
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-6">
+            
+                </div>
+            </div>
+      
+    </div>
+      </li>
+      <li [ngClass]="{active: activeRoute('dashboard1')}">
+          <a [routerLink]="['/dashboards/dashboard1']"><i class="fa fa-th-large"></i><span class="nav-label">Dashboard v.1</span></a>
+      </li>
+      <li [ngClass]="{active: activeRoute('dashboards')}">
+        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard examples</span> <span class="fa arrow"></span> </a>
+        <ul class="nav nav-second-level collapse" [ngClass]="{in: activeRoute('dashboards')}">
+          <li [ngClass]="{active: activeRoute('dashboard2')}"><a [routerLink]="['/dashboards/dashboard2']">Dashboard v.2</a></li>
+          <li [ngClass]="{active: activeRoute('dashboard3')}"><a [routerLink]="['/dashboards/dashboard3']">Dashboard v.3</a></li>
+          <li [ngClass]="{active: activeRoute('dashboard4')}"><a [routerLink]="['/dashboards/dashboard4']">Dashboard v.4</a></li>
+          <li [ngClass]="{active: activeRoute('dashboard5')}"><a [routerLink]="['/dashboards/dashboard5']">Dashboard v.5</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+</nav>
